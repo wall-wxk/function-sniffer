@@ -1,5 +1,5 @@
 ;(function(FUN, undefined){
-	'use strict'
+	'use strict';
 
 	var list = []; // 存储订阅的需要调用的方法
 
@@ -13,8 +13,8 @@
 				或 Sniffer.run({'base':Wall, 'name':'mytext.init'}, 45, false);
 	*		如果不知道参数的个数，不能直接写，可以用apply的方式调用当前方法
 	*		示例:  Sniffer.run.apply(window, [ {'name':'Wall.mytext.init'}, 45, false ])
-  * @author	: wall
-  **/
+ 	* @author	: wall
+ 	**/
 	FUN.run = function(){
 		if(arguments.length < 1 || typeof arguments[0] != 'object'){
 			throw new Error('Sniffer.run 参数错误');
