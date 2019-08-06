@@ -1,7 +1,7 @@
 {
   "name": "function-sniffer",
   "version": "1.0.0",
-  "description": "npm test",
+  "description": "function sniffer",
   "main": "main.js",
   "scripts": {
     "commit": "git-cz",
@@ -94,8 +94,9 @@
   "module": "dist/function-sniffer.esm.js",
   "unpkg": "dist/function-sniffer.min.js",
   "keywords": [
-    "leon",
-    "hello world"
+    "sniffer",
+    "function sniffer",
+    "lazy run function"
   ],
   "homepage": "https://github.com/wall-wxk/function-sniffer",
   "repository": {
