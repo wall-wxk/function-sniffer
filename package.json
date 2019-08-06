@@ -15,11 +15,6 @@
     "test": "nyc mocha",
     "coveralls": "npm run test && nyc report --reporter=text-lcov | coveralls"
   },
-  "bin": {
-    "eslint": "./node_modules/.bin/eslint",
-    "mocha": "./node_modules/.bin/mocha",
-    "nyc": "./node_modules/.bin/nyc"
-  },
   "author": {
     "name": "leon",
     "email": "582104384@qq.com",
