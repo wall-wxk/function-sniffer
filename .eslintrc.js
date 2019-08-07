@@ -17,7 +17,6 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
     ], // 核心规则
     "globals": { // 全局变量
@@ -27,8 +26,11 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        "prefer-const": "off",
         "no-unused-vars": "warn",
-        "no-console": "warn",
-        "generator-star-spacing": "off"
+        "no-console": "off",
+        "generator-star-spacing": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
     }
 };

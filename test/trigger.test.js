@@ -1,7 +1,9 @@
-var Sniffer = require('../dist/function-sniffer.cjs.js');
-var expect = require('chai').expect;
+import Sniffer from '../dist/function-sniffer.cjs';
+import {
+    expect
+} from 'chai';
 
-var Test = {
+let Test = {
     say: function(str){
         return str;
     },
@@ -15,7 +17,7 @@ var Test = {
 
 describe('trigger()', function(){
     it('trigger default', function(){
-        var result = Sniffer.run({
+        const result = Sniffer.run({
             base: Test,
             name: 'do',
             subscribe: true
@@ -27,7 +29,7 @@ describe('trigger()', function(){
             return str
         };
 
-        var result2 = Sniffer.trigger({
+        const result2 = Sniffer.trigger({
             base: Test,
             name: 'do'
         });
@@ -35,7 +37,7 @@ describe('trigger()', function(){
         expect(result2).to.equal(true);
     })
     it('trigger default base', function(){
-        var result = Sniffer.run({
+        const result = Sniffer.run({
             base: window,
             name: 'todo',
             subscribe: true
@@ -47,7 +49,7 @@ describe('trigger()', function(){
             return str
         };
 
-        var result2 = Sniffer.trigger({
+        const result2 = Sniffer.trigger({
             name: 'todo'
         });
 
@@ -72,7 +74,7 @@ describe('trigger()', function(){
             subscribe: true
         }, true);
 
-        var result = Sniffer.trigger({
+        const result = Sniffer.trigger({
             base: Test,
             name: 'notExist'
         });
@@ -88,7 +90,7 @@ describe('trigger()', function(){
 
         Test.notFn = {};
 
-        var result = Sniffer.trigger({
+        const result = Sniffer.trigger({
             base: Test,
             name: 'notFn'
         });
@@ -107,7 +109,7 @@ describe('trigger()', function(){
     })
     it('checkMethod readyFunc is undefined.', function(){
         Test.undefined = undefined;
-        var result = Sniffer.run({
+        const result = Sniffer.run({
             base: Test,
             name:'undefined.undefined'
         })

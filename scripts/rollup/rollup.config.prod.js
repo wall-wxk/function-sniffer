@@ -14,13 +14,11 @@ import {
     libraryName
 } from '../config.js';
 
-const banner = `
-/*!
+const banner = `/*!
 * ${name}.js v${version}
 * (c) 2019-${new Date().getFullYear()} ${author.name}
 * Released under the ${license} License.
-*/
-`;
+*/`;
 
 let override = { compilerOptions: { 
     "declaration": false,

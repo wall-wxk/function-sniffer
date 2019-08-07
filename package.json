@@ -10,7 +10,7 @@
     "clean:example": "rimraf example/lib",
     "dev": "npm run clean:example && npm run clean && rollup --watch --config scripts/rollup/rollup.config.dev.js",
     "build": "npm run clean && tsc && rollup --config scripts/rollup/rollup.config.prod.js",
-    "eslint": "eslint src --fix --ext .ts",
+    "eslint": "eslint src --ext .ts",
     "push:publish": "git push --follow-tags origin master && npm publish",
     "test": "nyc mocha",
     "coveralls": "npm run test && nyc report --reporter=text-lcov | coveralls"
@@ -76,7 +76,7 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
-      "eslint src --fix --ext .ts",
+      "eslint src --ext .ts",
       "git add"
     ]
   },

@@ -1,12 +1,12 @@
-export type TcallbackFunc = {
-    name: string,
-    base?: object,
-    args?: Array<any>
-};
+export interface TcallbackFunc{
+    name: string;
+    base?: object;
+    args?: any[];
+}
 
-export type Tlist = Array<TcallbackFunc>;
+export type Tlist = TcallbackFunc[];
 
-export type Toption = {
-    name: string,
-    base?: object
-};
+export interface Toption{
+    name: string;
+    base?: object;
+}

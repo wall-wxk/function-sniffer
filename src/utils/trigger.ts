@@ -4,14 +4,14 @@ import {
     Toption
 } from './type'
 
-export default function (list: Tlist, option: Toption):void {
+export default function (list: Tlist, option: Toption): void {
     if (typeof option !== 'object') {
         throw new Error('Sniffer.trigger parameter error');
     }
 
     const funcName = option.name || ''; // 函数名
     const base = option.base || window; // 基准对象，函数查找的起点
-    let newList:Tlist = []; // 用于更新list
+    let newList: Tlist = []; // 用于更新list
     let i; // 遍历list
     let param; // 临时存储list[i]
 
@@ -37,4 +37,4 @@ export default function (list: Tlist, option: Toption):void {
     }
 
     list = newList;
-};
+}

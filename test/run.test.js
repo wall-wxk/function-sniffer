@@ -1,7 +1,9 @@
-var Sniffer = require('../dist/function-sniffer.cjs.js');
-var expect = require('chai').expect;
+import Sniffer from '../dist/function-sniffer.cjs';
+import {
+    expect
+} from 'chai';
 
-var Test = {
+let Test = {
     say: function(str){
         return str;
     },
@@ -15,14 +17,14 @@ var Test = {
 
 describe('run()', function(){
     it('run default', function(){
-        var result = Sniffer.run({
+        const result = Sniffer.run({
             base: Test,
             name: 'say'
         }, 'hello');
         expect(result).to.equal('hello');
     })
     it('run function not exit', function(){
-        var result = Sniffer.run({
+        const result = Sniffer.run({
             base: window,
             name: 'say'
         }, 'hello');
@@ -44,7 +46,7 @@ describe('run()', function(){
         }).to.throw('Sniffer.run parameter error');
     })
     it('run is not function', function(){
-        var result = Sniffer.run({
+        const result = Sniffer.run({
             base: Test,
             name: 'next.value'
         }, 1, 2)
@@ -54,7 +56,7 @@ describe('run()', function(){
         window.sayHello = function(){
             return true;
         }
-        var result = Sniffer.run({
+        const result = Sniffer.run({
             name: 'sayHello',
         });
 

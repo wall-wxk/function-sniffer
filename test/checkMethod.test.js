@@ -1,7 +1,9 @@
-var Sniffer = require('../dist/function-sniffer.cjs.js');
-var expect = require('chai').expect;
+import Sniffer from '../dist/function-sniffer.cjs';
+import {
+    expect
+} from 'chai';
 
-var Test = {
+let Test = {
     say: function(str){
         return str;
     },
@@ -25,7 +27,7 @@ describe('checkMethod', function(){
     })
     it('checkMethod readyFunc is not object.', function(){
         Test.undefined = undefined;
-        var result = Sniffer.run({
+        const result = Sniffer.run({
             base: Test,
             name:'undefined.undefined'
         })
