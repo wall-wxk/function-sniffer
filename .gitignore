@@ -49,3 +49,5 @@ node_modules
 # Project specific stuff
 .rpt2_cache
 .nyc_output
+dist
+lib

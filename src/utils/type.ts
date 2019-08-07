@@ -5,3 +5,8 @@ export type TcallbackFunc = {
 };
 
 export type Tlist = Array<TcallbackFunc>;
+
+export type Toption = {
+    name: string,
+    base?: object
+};

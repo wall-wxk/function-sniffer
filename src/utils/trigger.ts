@@ -1,12 +1,8 @@
 import checkMethod from './checkMethod'
 import {
-    Tlist
+    Tlist,
+    Toption
 } from './type'
-
-type Toption = {
-    name: string,
-    base: object
-};
 
 export default function (list: Tlist, option: Toption):void {
     if (typeof option !== 'object') {

@@ -1,7 +1,8 @@
 import run from './utils/run';
 import trigger from './utils/trigger';
 import {
-    Tlist
+    Tlist,
+    Toption
 } from './utils/type'
 
 let list:Tlist = [];
@@ -23,8 +24,7 @@ export default {
         Sniffer.run.apply(window, [ {'name':'Wall.mytext.init'}, 45, false ])
         ```
     */
-    run: function(){
-        const args = Array.prototype.slice.call(arguments);
+    run: function(...args: any[]){
         return run(list, ...args);
     },
     /**
@@ -37,7 +37,7 @@ export default {
     *   另外，调用trigger方法的前提是，订阅方法所在js已经加载并解析完毕
     *   不管触发成功与否，都会清除list中对应的项
     */
-    trigger: function(option){
+    trigger: function(option: Toption){
         return trigger(list, option);
     }
 }
